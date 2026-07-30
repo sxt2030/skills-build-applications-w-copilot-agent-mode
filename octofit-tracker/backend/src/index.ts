@@ -5,10 +5,10 @@ import db from './config/database';
 import apiRouter from './routes/api';
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 
 const codespaceName = process.env.CODESPACE_NAME;
-const baseUrl = codespaceName
+const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
   : 'http://localhost:8000';
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api', apiRouter);
 
 app.get('/', (_req, res) => {
-  res.json({ message: 'OctoFit Tracker API', baseUrl });
+  res.json({ message: 'OctoFit Tracker API', apiBaseUrl });
 });
 
 db.once('open', () => {
