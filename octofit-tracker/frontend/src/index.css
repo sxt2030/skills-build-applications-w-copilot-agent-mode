@@ -1,0 +1,20 @@
+:root {
+  color: #263c35;
+  background: #f7f5ef;
+  font-family: Avenir Next, Trebuchet MS, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
