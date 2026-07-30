@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api'
 
+const activitiesEndpoint = '/api/activities/'
+
 function formatDate(value) {
   if (!value) {
     return 'Unscheduled'
@@ -17,7 +19,7 @@ function Activities() {
   useEffect(() => {
     let isMounted = true
 
-    fetchCollection('activities')
+    fetchCollection('activities', activitiesEndpoint)
       .then((data) => {
         if (isMounted) {
           setActivities(data)
